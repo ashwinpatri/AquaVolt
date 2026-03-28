@@ -21,7 +21,7 @@ pub fn run() {
         .plugin(tauri_plugin_opener::init())
         .invoke_handler(tauri::generate_handler![open_doc])
         .setup(|app| {
-            let bytes = include_bytes!("../icons/128x128.png");
+            let bytes = include_bytes!("../icons/icon.png");
             let img = image::load_from_memory(bytes).expect("failed to load icon");
             let rgba = img.to_rgba8();
             let (w, h) = rgba.dimensions();
