@@ -1,13 +1,10 @@
-import { useState } from 'react'
 import { Settings, BookOpen } from 'lucide-react'
 import { useAppStore } from '../../store/appStore'
 import { useLanguage } from '../../App'
 import ConnectionButton from '../connection/ConnectionButton'
-import DocsViewer from '../docs/DocsViewer'
 
-export default function TopBar() {
+export default function TopBar({ onDocsOpen }: { onDocsOpen: () => void }) {
   const { activeTab, setActiveTab, setSettingsOpen } = useAppStore()
-  const [docsOpen, setDocsOpen] = useState(false)
   const t = useLanguage()
 
   const tabs = [
@@ -80,7 +77,7 @@ export default function TopBar() {
           <ConnectionButton />
 
           <button
-            onClick={() => setDocsOpen(true)}
+            onClick={onDocsOpen}
             title="Documentation"
             style={{
               width: '32px', height: '32px', borderRadius: 'var(--radius-md)',
@@ -111,7 +108,6 @@ export default function TopBar() {
         </div>
       </div>
 
-      {docsOpen && <DocsViewer onClose={() => setDocsOpen(false)} />}
     </>
   )
 }

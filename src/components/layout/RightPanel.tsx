@@ -19,7 +19,7 @@ export default function RightPanel() {
       {/* Scrollable content with visible scrollbar */}
       <div
         className="dashboard-scroll"
-        style={{ flex: 1, overflowY: 'scroll', padding: '16px', display: 'flex', flexDirection: 'column', gap: '14px' }}
+        style={{ flex: 1, minHeight: 0, overflowY: 'scroll', padding: '16px', display: 'flex', flexDirection: 'column', gap: '14px' }}
       >
         <StatsGrid />
 
