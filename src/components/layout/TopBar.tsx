@@ -4,7 +4,7 @@ import { useLanguage } from '../../App'
 import ConnectionButton from '../connection/ConnectionButton'
 
 export default function TopBar({ onDocsOpen }: { onDocsOpen: () => void }) {
-  const { activeTab, setActiveTab, setSettingsOpen } = useAppStore()
+  const { activeTab, setActiveTab, setSettingsOpen, settingsOpen } = useAppStore()
   const t = useLanguage()
 
   const tabs = [
@@ -59,10 +59,10 @@ export default function TopBar({ onDocsOpen }: { onDocsOpen: () => void }) {
                 padding:      '5px 16px',
                 borderRadius: '7px',
                 fontSize:     '13px',
-                fontWeight:   activeTab === tab.key ? 600 : 400,
-                color:        activeTab === tab.key ? 'var(--text-primary)' : 'var(--text-muted)',
-                background:   activeTab === tab.key ? 'var(--bg-secondary)' : 'transparent',
-                border:       activeTab === tab.key ? '1px solid var(--bg-border)' : '1px solid transparent',
+                fontWeight:   activeTab === tab.key && !settingsOpen ? 600 : 400,
+                color:        activeTab === tab.key && !settingsOpen ? 'var(--text-primary)' : 'var(--text-muted)',
+                background:   activeTab === tab.key && !settingsOpen ? 'var(--bg-secondary)' : 'transparent',
+                border:       activeTab === tab.key && !settingsOpen ? '1px solid var(--bg-border)' : '1px solid transparent',
                 cursor:       'pointer',
                 transition:   'all 0.15s ease',
               }}

@@ -1,4 +1,5 @@
 import { FileText, X } from 'lucide-react'
+import { createPortal } from 'react-dom'
 import { invoke } from '@tauri-apps/api/core'
 import { useLanguage } from '../../App'
 
@@ -16,15 +17,12 @@ export default function DocsViewer({ onClose }: { onClose: () => void }) {
     catch { window.open(`/src/assets/docs/${file}`, '_blank') }
   }
 
-  return (
+  return createPortal(
     <>
-      {/* Full-screen backdrop, centered over entire window */}
       <div
         onClick={onClose}
         style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(4px)', zIndex: 200 }}
       />
-
-      {/* Modal — fixed to window center */}
       <div className="fade-in" style={{
         position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
         background: 'var(--bg-secondary)', border: '1px solid var(--bg-border)',
@@ -51,6 +49,7 @@ export default function DocsViewer({ onClose }: { onClose: () => void }) {
           Available offline
         </p>
       </div>
-    </>
+    </>,
+    document.body
   )
 }

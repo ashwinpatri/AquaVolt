@@ -1,5 +1,5 @@
-import { Usb, Bluetooth, BookOpen, ArrowLeft } from 'lucide-react'
-import { useState } from 'react'
+import { Usb, Bluetooth, BookOpen, ArrowLeft, Lock } from 'lucide-react'
+import { useState, useRef } from 'react'
 import { useAppStore } from '../store/appStore'
 import { usePiConnection } from '../hooks/usePiConnection'
 import { useLanguage } from '../App'
@@ -36,6 +36,53 @@ function NumberInput({ value, onChange, min, max, step = 1 }: { value: number; o
   )
 }
 
+function SlideToUnlock({ onUnlock }: { onUnlock: () => void }) {
+  const [pos, setPos]       = useState(0)
+  const [dragging, setDragging] = useState(false)
+  const trackRef = useRef<HTMLDivElement>(null)
+  const THUMB = 44
+
+  const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+    e.currentTarget.setPointerCapture(e.pointerId)
+    setDragging(true)
+  }
+  const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (!dragging || !trackRef.current) return
+    const rect = trackRef.current.getBoundingClientRect()
+    const max  = rect.width - THUMB
+    const x    = Math.max(0, Math.min(e.clientX - rect.left - THUMB / 2, max))
+    const ratio = x / max
+    setPos(ratio)
+    if (ratio >= 0.92) { setDragging(false); onUnlock() }
+  }
+  const handlePointerUp = () => { if (dragging) { setDragging(false); setPos(0) } }
+
+  const trackW   = trackRef.current?.getBoundingClientRect().width ?? 0
+  const thumbLeft = pos * Math.max(0, trackW - THUMB)
+
+  return (
+    <div ref={trackRef} style={{ position: 'relative', height: 42, background: 'var(--bg-tertiary)', border: '1px solid var(--bg-border)', borderRadius: 21, overflow: 'hidden', userSelect: 'none' }}>
+      <div style={{ position: 'absolute', top: 0, left: 0, bottom: 0, width: thumbLeft + THUMB / 2, background: 'rgba(124,58,237,0.15)', transition: dragging ? 'none' : 'width 0.3s ease' }} />
+      <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '11px', color: 'var(--text-muted)', pointerEvents: 'none', letterSpacing: '0.06em', fontWeight: 500 }}>
+        SLIDE TO UNLOCK ADVANCED
+      </div>
+      <div
+        onPointerDown={handlePointerDown} onPointerMove={handlePointerMove}
+        onPointerUp={handlePointerUp}     onPointerCancel={handlePointerUp}
+        style={{
+          position: 'absolute', top: 3, bottom: 3, left: thumbLeft, width: THUMB - 6,
+          background: 'var(--purple-600)', borderRadius: 18, cursor: 'grab',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          transition: dragging ? 'none' : 'left 0.3s ease',
+          boxShadow: '0 2px 8px rgba(0,0,0,0.35)',
+        }}
+      >
+        <span style={{ color: '#fff', fontSize: '16px', pointerEvents: 'none' }}>›</span>
+      </div>
+    </div>
+  )
+}
+
 function Toggle({ value, onChange }: { value: boolean; onChange: (v: boolean) => void }) {
   return (
     <button onClick={() => onChange(!value)}
@@ -51,6 +98,7 @@ export default function Settings({ onClose }: { onClose: () => void }) {
   const { disconnect } = usePiConnection()
   const [docsOpen, setDocsOpen] = useState(false)
   const [confirmReset, setConfirmReset] = useState(false)
+  const [advancedUnlocked, setAdvancedUnlocked] = useState(false)
   const t = useLanguage()
 
   const electrodeOptions: { value: ElectrodeType; label: string }[] = [
@@ -154,18 +202,29 @@ export default function Settings({ onClose }: { onClose: () => void }) {
             </Section>
 
             <Section title={t.advanced}>
-              <SettingRow label={t.efficiencyOverride}>
-                <NumberInput value={Math.round(config.efficiency * 100)} onChange={v => updateConfig({ efficiency: v / 100 })} min={10} max={100} />
-              </SettingRow>
-              <SettingRow label={t.maxCurrent}>
-                <NumberInput value={config.maxCurrent} onChange={v => updateConfig({ maxCurrent: v })} min={0.5} max={10} step={0.5} />
-              </SettingRow>
-              <SettingRow label={t.maxRuntime}>
-                <NumberInput value={config.maxRuntime} onChange={v => updateConfig({ maxRuntime: v })} min={1} max={480} />
-              </SettingRow>
-              <SettingRow label={t.autoStop}>
-                <Toggle value={config.autoStop} onChange={v => updateConfig({ autoStop: v })} />
-              </SettingRow>
+              {advancedUnlocked ? (
+                <>
+                  <SettingRow label={t.efficiencyOverride}>
+                    <NumberInput value={Math.round(config.efficiency * 100)} onChange={v => updateConfig({ efficiency: v / 100 })} min={10} max={100} />
+                  </SettingRow>
+                  <SettingRow label={t.maxCurrent}>
+                    <NumberInput value={config.maxCurrent} onChange={v => updateConfig({ maxCurrent: v })} min={0.5} max={10} step={0.5} />
+                  </SettingRow>
+                  <SettingRow label={t.maxRuntime}>
+                    <NumberInput value={config.maxRuntime} onChange={v => updateConfig({ maxRuntime: v })} min={1} max={480} />
+                  </SettingRow>
+                  <SettingRow label={t.autoStop}>
+                    <Toggle value={config.autoStop} onChange={v => updateConfig({ autoStop: v })} />
+                  </SettingRow>
+                  <button onClick={() => setAdvancedUnlocked(false)}
+                    style={{ display: 'flex', alignItems: 'center', gap: '6px', marginTop: '4px', padding: '5px 10px', borderRadius: 'var(--radius-sm)', border: '1px solid var(--bg-border)', background: 'transparent', color: 'var(--text-muted)', fontSize: '11px', cursor: 'pointer' }}
+                  >
+                    <Lock size={11} /> Lock advanced settings
+                  </button>
+                </>
+              ) : (
+                <SlideToUnlock onUnlock={() => setAdvancedUnlocked(true)} />
+              )}
             </Section>
 
             <Section title={t.docs}>
