@@ -1,0 +1,92 @@
+import type { Translations } from '../types'
+
+const en: Translations = {
+  selectLanguage: 'Select your language to continue',
+  continue: 'Continue',
+  termsTitle: 'Terms of Service',
+  termsScroll: 'Please scroll to the bottom to continue',
+  termsAgree: 'I have read and agree to the Terms of Service',
+  termsBody: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+
+Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.
+
+At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.
+
+Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.
+
+Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus.
+
+Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.`,
+  connected: 'Connected',
+  disconnected: 'Disconnected',
+  connecting: 'Connecting...',
+  connectionFailed: 'Connection failed',
+  connectUsb: 'Connect via USB',
+  connectBluetooth: 'Connect via Bluetooth',
+  connectionHint: 'Make sure your device is powered on',
+  connectedTo: 'Connected',
+  disconnect: 'Disconnect',
+  dashboard: 'Dashboard',
+  sessionLog: 'Session Log',
+  device: 'Device',
+  piModel: 'Model',
+  connectionType: 'Connection',
+  uptime: 'Uptime',
+  target: 'Target',
+  concentration: 'Concentration',
+  jarSize: 'Jar Size',
+  efficiency: 'Efficiency',
+  power: 'Power',
+  dutyCycle: 'Duty Cycle',
+  start: 'Start',
+  stop: 'Stop',
+  deploy: 'Push to Device',
+  lastDeploy: 'Last deployed',
+  never: 'Never',
+  voltage: 'Voltage',
+  current: 'Current',
+  powerW: 'Power',
+  coulombs: 'Coulombs',
+  gramsProduced: 'NaOCl Produced',
+  estimatedPpm: 'Est. Concentration',
+  progress: 'Progress',
+  eta: 'ETA',
+  treatable: 'Water Treatable',
+  energyUsed: 'Energy Used',
+  sessions: 'Sessions',
+  noSessions: 'No sessions recorded yet',
+  exportCsv: 'Export CSV',
+  sessionStart: 'Start Time',
+  sessionDuration: 'Duration',
+  sessionGrams: 'Grams',
+  sessionPpm: 'Est. PPM',
+  sessionEff: 'Efficiency',
+  sessionStatus: 'Status',
+  complete: 'Complete',
+  interrupted: 'Interrupted',
+  settings: 'Settings',
+  connectionSettings: 'Connection',
+  preferences: 'Preferences',
+  language: 'Language',
+  advanced: 'Advanced',
+  efficiencyOverride: 'Efficiency Override',
+  maxCurrent: 'Max Current (A)',
+  maxRuntime: 'Max Runtime (min)',
+  about: 'About',
+  version: 'Version',
+  docs: 'Documentation',
+  assemblyGuide: 'Assembly Guide',
+  chemistryExplained: 'Chemistry Explained',
+  wiringDiagram: 'Wiring Diagram',
+  autoStop: 'Auto-stop at Target',
+  running: 'Running',
+  idle: 'Idle',
+  targetReached: 'Target Reached',
+  safeToUse: 'Safe to use for water treatment',
+}
+
+export default en

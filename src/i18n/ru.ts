@@ -1,0 +1,92 @@
+import type { Translations } from '../types'
+
+const ru: Translations = {
+  selectLanguage: 'Выберите язык для продолжения',
+  continue: 'Продолжить',
+  termsTitle: 'Условия использования',
+  termsScroll: 'Пожалуйста, прокрутите вниз для продолжения',
+  termsAgree: 'Я прочитал и соглашаюсь с Условиями использования',
+  termsBody: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+
+Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.
+
+At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.
+
+Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.
+
+Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus.
+
+Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.`,
+  connected: 'Подключено',
+  disconnected: 'Отключено',
+  connecting: 'Подключение...',
+  connectionFailed: 'Ошибка подключения',
+  connectUsb: 'Подключить через USB',
+  connectBluetooth: 'Подключить через Bluetooth',
+  connectionHint: 'Убедитесь, что устройство включено',
+  connectedTo: 'Подключено',
+  disconnect: 'Отключить',
+  dashboard: 'Панель управления',
+  sessionLog: 'Журнал сессий',
+  device: 'Устройство',
+  piModel: 'Модель',
+  connectionType: 'Соединение',
+  uptime: 'Время работы',
+  target: 'Цель',
+  concentration: 'Концентрация',
+  jarSize: 'Объём ёмкости',
+  efficiency: 'Эффективность',
+  power: 'Мощность',
+  dutyCycle: 'Скважность',
+  start: 'Пуск',
+  stop: 'Стоп',
+  deploy: 'Отправить на устройство',
+  lastDeploy: 'Последняя отправка',
+  never: 'Никогда',
+  voltage: 'Напряжение',
+  current: 'Ток',
+  powerW: 'Мощность',
+  coulombs: 'Кулоны',
+  gramsProduced: 'Произведено NaOCl',
+  estimatedPpm: 'Расч. концентрация',
+  progress: 'Прогресс',
+  eta: 'Оставшееся время',
+  treatable: 'Объём воды',
+  energyUsed: 'Расход энергии',
+  sessions: 'Сессии',
+  noSessions: 'Сессии ещё не записаны',
+  exportCsv: 'Экспорт CSV',
+  sessionStart: 'Начало',
+  sessionDuration: 'Длительность',
+  sessionGrams: 'Граммы',
+  sessionPpm: 'PPM',
+  sessionEff: 'Эффективность',
+  sessionStatus: 'Статус',
+  complete: 'Завершено',
+  interrupted: 'Прервано',
+  settings: 'Настройки',
+  connectionSettings: 'Соединение',
+  preferences: 'Предпочтения',
+  language: 'Язык',
+  advanced: 'Расширенные',
+  efficiencyOverride: 'Перегрузка эффективности',
+  maxCurrent: 'Макс. ток (А)',
+  maxRuntime: 'Макс. время (мин)',
+  about: 'О программе',
+  version: 'Версия',
+  docs: 'Документация',
+  assemblyGuide: 'Руководство по сборке',
+  chemistryExplained: 'Химия',
+  wiringDiagram: 'Схема подключения',
+  autoStop: 'Авто-стоп при достижении цели',
+  running: 'Работает',
+  idle: 'Готово',
+  targetReached: 'Цель достигнута',
+  safeToUse: 'Пригодно для обработки воды',
+}
+
+export default ru

@@ -1,0 +1,30 @@
+export const FARADAY_CONSTANT = 96485        // C/mol
+export const NAOCL_MOLAR_MASS = 74.44        // g/mol
+export const ELECTRONS_PER_MOLECULE = 2
+export const DEFAULT_EFFICIENCY = 0.70       // 70%
+export const DOSE_PPM = 2                    // ppm dose for drinking water treatment
+
+export const VOLUME_OPTIONS: { label: string; value: number | null }[] = [
+  { label: '500 mL', value: 0.5 },
+  { label: '1 L',    value: 1.0 },
+  { label: '2 L',    value: 2.0 },
+  { label: 'Custom', value: null },
+]
+
+export const PPM_MIN = 100
+export const PPM_MAX = 1000
+export const PPM_DEFAULT = 500
+
+export const DUTY_DEFAULT = 70
+
+export const MAX_CURRENT_DEFAULT = 3.0       // A
+export const MAX_RUNTIME_DEFAULT = 60        // minutes
+
+export const MOCK_INTERVAL_MS = 500          // how often mock data updates
+export const CHART_WINDOW = 120              // seconds of history to show in charts
+
+export const LANGUAGES: { code: string; label: string; flag: string }[] = [
+  { code: 'en', label: 'English',  flag: '🇬🇧' },
+  { code: 'de', label: 'Deutsch',  flag: '🇩🇪' },
+  { code: 'ru', label: 'Русский',  flag: '🇷🇺' },
+]
