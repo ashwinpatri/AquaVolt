@@ -1,0 +1,102 @@
+import type { Translations } from '../types'
+
+const id: Translations = {
+  selectLanguage: 'Pilih bahasa Anda untuk melanjutkan',
+  continue: 'Lanjutkan',
+  termsTitle: 'Syarat Layanan',
+  termsScroll: 'Gulir ke bawah untuk melanjutkan',
+  termsAgree: 'Saya telah membaca dan menyetujui Syarat Layanan',
+  termsBody: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+
+Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.
+
+At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.
+
+Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.
+
+Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus.
+
+Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.`,
+  connected: 'Terhubung',
+  disconnected: 'Terputus',
+  connecting: 'Menghubungkan…',
+  connectionFailed: 'Gagal terhubung',
+  connectUsb: 'Hubungkan via USB',
+  connectBluetooth: 'Hubungkan via Bluetooth',
+  connectionHint: 'Pastikan perangkat Anda sudah menyala',
+  connectedTo: 'Terhubung',
+  disconnect: 'Putuskan',
+  dashboard: 'Dasbor',
+  sessionLog: 'Log Sesi',
+  device: 'Perangkat',
+  piModel: 'Model',
+  connectionType: 'Koneksi',
+  uptime: 'Uptime',
+  target: 'Target',
+  concentration: 'Konsentrasi',
+  jarSize: 'Ukuran wadah',
+  efficiency: 'Efisiensi',
+  power: 'Daya',
+  dutyCycle: 'Siklus kerja',
+  start: 'Mulai',
+  stop: 'Berhenti',
+  deploy: 'Kirim ke perangkat',
+  lastDeploy: 'Terakhir dikirim',
+  never: 'Tidak pernah',
+  voltage: 'Tegangan',
+  current: 'Arus',
+  powerW: 'Daya',
+  coulombs: 'Coulomb',
+  gramsProduced: 'NaOCl diproduksi',
+  estimatedPpm: 'Konsentrasi estimasi',
+  progress: 'Kemajuan',
+  eta: 'Waktu tersisa',
+  treatable: 'Air yang dapat diolah',
+  energyUsed: 'Energi terpakai',
+  sessions: 'Sesi',
+  noSessions: 'Belum ada sesi tercatat',
+  exportCsv: 'Ekspor CSV',
+  sessionStart: 'Waktu mulai',
+  sessionDuration: 'Durasi',
+  sessionGrams: 'Gram',
+  sessionPpm: 'PPM estimasi',
+  sessionEff: 'Efisiensi',
+  sessionStatus: 'Status',
+  complete: 'Selesai',
+  interrupted: 'Terputus',
+  settings: 'Pengaturan',
+  connectionSettings: 'Koneksi',
+  preferences: 'Preferensi',
+  language: 'Bahasa',
+  advanced: 'Lanjutan',
+  efficiencyOverride: 'Override efisiensi',
+  maxCurrent: 'Arus maks. (A)',
+  maxRuntime: 'Waktu maks. (menit)',
+  about: 'Tentang',
+  version: 'Versi',
+  docs: 'Dokumentasi',
+  assemblyGuide: 'Panduan perakitan',
+  chemistryExplained: 'Penjelasan kimia',
+  wiringDiagram: 'Diagram kabel',
+  autoStop: 'Berhenti otomatis saat target tercapai',
+  running: 'Berjalan',
+  idle: 'Siaga',
+  targetReached: 'Target tercapai',
+  safeToUse: 'Aman untuk pengolahan air',
+  electrodes: 'Elektroda',
+  electrodeType: 'Material elektroda',
+  electrodeHealth: 'Kondisi elektroda',
+  resetElectrode: 'Reset (elektroda baru terpasang)',
+  hoursUsed: 'Jam terpakai',
+  hoursRemaining: 'Jam tersisa',
+  energyCost: 'Biaya energi',
+  graphite: 'Grafit',
+  titaniumMmo: 'Titanium MMO',
+  platinum: 'Platina',
+}
+
+export default id

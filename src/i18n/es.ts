@@ -1,0 +1,102 @@
+import type { Translations } from '../types'
+
+const es: Translations = {
+  selectLanguage: 'Selecciona tu idioma para continuar',
+  continue: 'Continuar',
+  termsTitle: 'Términos de servicio',
+  termsScroll: 'Por favor desplázate hasta el final para continuar',
+  termsAgree: 'He leído y acepto los Términos de servicio',
+  termsBody: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+
+Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.
+
+At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.
+
+Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.
+
+Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus.
+
+Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.`,
+  connected: 'Conectado',
+  disconnected: 'Desconectado',
+  connecting: 'Conectando…',
+  connectionFailed: 'Error de conexión',
+  connectUsb: 'Conectar por USB',
+  connectBluetooth: 'Conectar por Bluetooth',
+  connectionHint: 'Asegúrate de que tu dispositivo esté encendido',
+  connectedTo: 'Conectado',
+  disconnect: 'Desconectar',
+  dashboard: 'Panel',
+  sessionLog: 'Registro de sesiones',
+  device: 'Dispositivo',
+  piModel: 'Modelo',
+  connectionType: 'Conexión',
+  uptime: 'Tiempo activo',
+  target: 'Objetivo',
+  concentration: 'Concentración',
+  jarSize: 'Tamaño del recipiente',
+  efficiency: 'Eficiencia',
+  power: 'Potencia',
+  dutyCycle: 'Ciclo de trabajo',
+  start: 'Iniciar',
+  stop: 'Detener',
+  deploy: 'Enviar al dispositivo',
+  lastDeploy: 'Último envío',
+  never: 'Nunca',
+  voltage: 'Voltaje',
+  current: 'Corriente',
+  powerW: 'Potencia',
+  coulombs: 'Culombios',
+  gramsProduced: 'NaOCl producido',
+  estimatedPpm: 'Conc. estimada',
+  progress: 'Progreso',
+  eta: 'Tiempo restante',
+  treatable: 'Agua tratable',
+  energyUsed: 'Energía usada',
+  sessions: 'Sesiones',
+  noSessions: 'Sin sesiones registradas',
+  exportCsv: 'Exportar CSV',
+  sessionStart: 'Inicio',
+  sessionDuration: 'Duración',
+  sessionGrams: 'Gramos',
+  sessionPpm: 'PPM estimado',
+  sessionEff: 'Eficiencia',
+  sessionStatus: 'Estado',
+  complete: 'Completo',
+  interrupted: 'Interrumpido',
+  settings: 'Configuración',
+  connectionSettings: 'Conexión',
+  preferences: 'Preferencias',
+  language: 'Idioma',
+  advanced: 'Avanzado',
+  efficiencyOverride: 'Forzar eficiencia',
+  maxCurrent: 'Corriente máx. (A)',
+  maxRuntime: 'Tiempo máx. (min)',
+  about: 'Acerca de',
+  version: 'Versión',
+  docs: 'Documentación',
+  assemblyGuide: 'Guía de ensamblaje',
+  chemistryExplained: 'Química explicada',
+  wiringDiagram: 'Diagrama de cableado',
+  autoStop: 'Parar al alcanzar el objetivo',
+  running: 'En ejecución',
+  idle: 'Inactivo',
+  targetReached: 'Objetivo alcanzado',
+  safeToUse: 'Seguro para tratamiento de agua',
+  electrodes: 'Electrodos',
+  electrodeType: 'Material del electrodo',
+  electrodeHealth: 'Estado del electrodo',
+  resetElectrode: 'Restablecer (electrodos nuevos instalados)',
+  hoursUsed: 'Horas usadas',
+  hoursRemaining: 'Horas restantes',
+  energyCost: 'Coste energético',
+  graphite: 'Grafito',
+  titaniumMmo: 'Titanio MMO',
+  platinum: 'Platino',
+}
+
+export default es

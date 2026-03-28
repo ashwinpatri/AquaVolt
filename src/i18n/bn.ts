@@ -1,0 +1,102 @@
+import type { Translations } from '../types'
+
+const bn: Translations = {
+  selectLanguage: 'চালিয়ে যেতে আপনার ভাষা নির্বাচন করুন',
+  continue: 'চালিয়ে যান',
+  termsTitle: 'সেবার শর্তাবলী',
+  termsScroll: 'চালিয়ে যেতে নিচে স্ক্রোল করুন',
+  termsAgree: 'আমি সেবার শর্তাবলী পড়েছি এবং সম্মত হচ্ছি',
+  termsBody: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+
+Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.
+
+At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.
+
+Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.
+
+Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus.
+
+Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.`,
+  connected: 'সংযুক্ত',
+  disconnected: 'বিচ্ছিন্ন',
+  connecting: 'সংযোগ করা হচ্ছে…',
+  connectionFailed: 'সংযোগ ব্যর্থ',
+  connectUsb: 'USB দিয়ে সংযোগ করুন',
+  connectBluetooth: 'ব্লুটুথ দিয়ে সংযোগ করুন',
+  connectionHint: 'নিশ্চিত করুন আপনার ডিভাইস চালু আছে',
+  connectedTo: 'সংযুক্ত',
+  disconnect: 'সংযোগ বিচ্ছিন্ন করুন',
+  dashboard: 'ড্যাশবোর্ড',
+  sessionLog: 'সেশন লগ',
+  device: 'ডিভাইস',
+  piModel: 'মডেল',
+  connectionType: 'সংযোগ',
+  uptime: 'আপটাইম',
+  target: 'লক্ষ্য',
+  concentration: 'ঘনত্ব',
+  jarSize: 'জারের আকার',
+  efficiency: 'দক্ষতা',
+  power: 'শক্তি',
+  dutyCycle: 'ডিউটি সাইকেল',
+  start: 'শুরু করুন',
+  stop: 'বন্ধ করুন',
+  deploy: 'ডিভাইসে পাঠান',
+  lastDeploy: 'সর্বশেষ পাঠানো',
+  never: 'কখনো না',
+  voltage: 'ভোল্টেজ',
+  current: 'কারেন্ট',
+  powerW: 'শক্তি',
+  coulombs: 'কুলম্ব',
+  gramsProduced: 'উৎপাদিত NaOCl',
+  estimatedPpm: 'আনুমানিক PPM',
+  progress: 'অগ্রগতি',
+  eta: 'বাকি সময়',
+  treatable: 'চিকিৎসযোগ্য জল',
+  energyUsed: 'ব্যবহৃত শক্তি',
+  sessions: 'সেশন',
+  noSessions: 'কোনো সেশন নেই',
+  exportCsv: 'CSV রপ্তানি করুন',
+  sessionStart: 'শুরুর সময়',
+  sessionDuration: 'সময়কাল',
+  sessionGrams: 'গ্রাম',
+  sessionPpm: 'আনুমানিক PPM',
+  sessionEff: 'দক্ষতা',
+  sessionStatus: 'অবস্থা',
+  complete: 'সম্পন্ন',
+  interrupted: 'বাধাগ্রস্ত',
+  settings: 'সেটিংস',
+  connectionSettings: 'সংযোগ',
+  preferences: 'পছন্দ',
+  language: 'ভাষা',
+  advanced: 'উন্নত',
+  efficiencyOverride: 'দক্ষতা ওভাররাইড',
+  maxCurrent: 'সর্বোচ্চ কারেন্ট (A)',
+  maxRuntime: 'সর্বোচ্চ রানটাইম (মিনিট)',
+  about: 'সম্পর্কে',
+  version: 'সংস্করণ',
+  docs: 'ডকুমেন্টেশন',
+  assemblyGuide: 'সমাবেশ গাইড',
+  chemistryExplained: 'রসায়ন ব্যাখ্যা',
+  wiringDiagram: 'ওয়্যারিং ডায়াগ্রাম',
+  autoStop: 'লক্ষ্যে স্বয়ংক্রিয় বন্ধ',
+  running: 'চলমান',
+  idle: 'নিষ্ক্রিয়',
+  targetReached: 'লক্ষ্য অর্জিত',
+  safeToUse: 'জল চিকিৎসার জন্য নিরাপদ',
+  electrodes: 'ইলেক্ট্রোড',
+  electrodeType: 'ইলেক্ট্রোড উপাদান',
+  electrodeHealth: 'ইলেক্ট্রোড স্বাস্থ্য',
+  resetElectrode: 'রিসেট করুন (নতুন ইলেক্ট্রোড)',
+  hoursUsed: 'ব্যবহৃত ঘণ্টা',
+  hoursRemaining: 'বাকি ঘণ্টা',
+  energyCost: 'শক্তির খরচ',
+  graphite: 'গ্রাফাইট',
+  titaniumMmo: 'টাইটানিয়াম MMO',
+  platinum: 'প্লাটিনাম',
+}
+
+export default bn

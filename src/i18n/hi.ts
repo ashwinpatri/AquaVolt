@@ -1,0 +1,102 @@
+import type { Translations } from '../types'
+
+const hi: Translations = {
+  selectLanguage: 'जारी रखने के लिए अपनी भाषा चुनें',
+  continue: 'जारी रखें',
+  termsTitle: 'सेवा की शर्तें',
+  termsScroll: 'जारी रखने के लिए नीचे स्क्रॉल करें',
+  termsAgree: 'मैंने सेवा की शर्तें पढ़ी हैं और सहमत हूँ',
+  termsBody: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+
+Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.
+
+At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.
+
+Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.
+
+Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus.
+
+Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.`,
+  connected: 'जुड़ा हुआ',
+  disconnected: 'डिस्कनेक्ट',
+  connecting: 'जोड़ रहे हैं…',
+  connectionFailed: 'कनेक्शन विफल',
+  connectUsb: 'USB से जोड़ें',
+  connectBluetooth: 'Bluetooth से जोड़ें',
+  connectionHint: 'सुनिश्चित करें कि आपका उपकरण चालू है',
+  connectedTo: 'जुड़ा हुआ',
+  disconnect: 'डिस्कनेक्ट करें',
+  dashboard: 'डैशबोर्ड',
+  sessionLog: 'सत्र लॉग',
+  device: 'उपकरण',
+  piModel: 'मॉडल',
+  connectionType: 'कनेक्शन',
+  uptime: 'अपटाइम',
+  target: 'लक्ष्य',
+  concentration: 'सांद्रता',
+  jarSize: 'जार का आकार',
+  efficiency: 'दक्षता',
+  power: 'शक्ति',
+  dutyCycle: 'ड्यूटी साइकिल',
+  start: 'शुरू करें',
+  stop: 'रोकें',
+  deploy: 'उपकरण पर भेजें',
+  lastDeploy: 'अंतिम बार भेजा',
+  never: 'कभी नहीं',
+  voltage: 'वोल्टेज',
+  current: 'धारा',
+  powerW: 'शक्ति',
+  coulombs: 'कूलम्ब',
+  gramsProduced: 'उत्पादित NaOCl',
+  estimatedPpm: 'अनुमानित PPM',
+  progress: 'प्रगति',
+  eta: 'शेष समय',
+  treatable: 'उपचार योग्य जल',
+  energyUsed: 'ऊर्जा उपयोग',
+  sessions: 'सत्र',
+  noSessions: 'कोई सत्र नहीं',
+  exportCsv: 'CSV निर्यात करें',
+  sessionStart: 'शुरुआत का समय',
+  sessionDuration: 'अवधि',
+  sessionGrams: 'ग्राम',
+  sessionPpm: 'अनुमानित PPM',
+  sessionEff: 'दक्षता',
+  sessionStatus: 'स्थिति',
+  complete: 'पूर्ण',
+  interrupted: 'बाधित',
+  settings: 'सेटिंग्स',
+  connectionSettings: 'कनेक्शन',
+  preferences: 'प्राथमिकताएँ',
+  language: 'भाषा',
+  advanced: 'उन्नत',
+  efficiencyOverride: 'दक्षता ओवरराइड',
+  maxCurrent: 'अधिकतम धारा (A)',
+  maxRuntime: 'अधिकतम रनटाइम (मिनट)',
+  about: 'के बारे में',
+  version: 'संस्करण',
+  docs: 'दस्तावेज़',
+  assemblyGuide: 'असेंबली गाइड',
+  chemistryExplained: 'रसायन विज्ञान',
+  wiringDiagram: 'वायरिंग आरेख',
+  autoStop: 'लक्ष्य पर स्वचालित रोकें',
+  running: 'चल रहा है',
+  idle: 'निष्क्रिय',
+  targetReached: 'लक्ष्य पूरा',
+  safeToUse: 'जल उपचार के लिए सुरक्षित',
+  electrodes: 'इलेक्ट्रोड',
+  electrodeType: 'इलेक्ट्रोड सामग्री',
+  electrodeHealth: 'इलेक्ट्रोड स्वास्थ्य',
+  resetElectrode: 'रीसेट करें (नए इलेक्ट्रोड)',
+  hoursUsed: 'उपयोग किए घंटे',
+  hoursRemaining: 'शेष घंटे',
+  energyCost: 'ऊर्जा लागत',
+  graphite: 'ग्रेफाइट',
+  titaniumMmo: 'टाइटेनियम MMO',
+  platinum: 'प्लेटिनम',
+}
+
+export default hi

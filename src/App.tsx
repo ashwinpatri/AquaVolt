@@ -4,11 +4,19 @@ import type { Translations } from './types'
 import en from './i18n/en'
 import de from './i18n/de'
 import ru from './i18n/ru'
+import zh from './i18n/zh'
+import hi from './i18n/hi'
+import es from './i18n/es'
+import ar from './i18n/ar'
+import fr from './i18n/fr'
+import bn from './i18n/bn'
+import pt from './i18n/pt'
+import id from './i18n/id'
 import LanguageSelect from './screens/LanguageSelect'
 import TermsOfService from './screens/TermsOfService'
 import Dashboard from './screens/Dashboard'
 
-const TRANSLATIONS: Record<string, Translations> = { en, de, ru }
+const TRANSLATIONS: Record<string, Translations> = { en, de, ru, zh, hi, es, ar, fr, bn, pt, id }
 
 const LanguageContext = createContext<Translations>(en)
 export const useLanguage = (): Translations => useContext(LanguageContext)

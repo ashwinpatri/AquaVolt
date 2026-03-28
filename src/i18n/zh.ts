@@ -1,0 +1,102 @@
+import type { Translations } from '../types'
+
+const zh: Translations = {
+  selectLanguage: '请选择您的语言以继续',
+  continue: '继续',
+  termsTitle: '服务条款',
+  termsScroll: '请滚动到底部以继续',
+  termsAgree: '我已阅读并同意服务条款',
+  termsBody: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+
+Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.
+
+At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.
+
+Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.
+
+Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus.
+
+Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.`,
+  connected: '已连接',
+  disconnected: '已断开',
+  connecting: '连接中…',
+  connectionFailed: '连接失败',
+  connectUsb: '通过 USB 连接',
+  connectBluetooth: '通过蓝牙连接',
+  connectionHint: '请确保您的设备已开机',
+  connectedTo: '已连接',
+  disconnect: '断开连接',
+  dashboard: '仪表板',
+  sessionLog: '会话日志',
+  device: '设备',
+  piModel: '型号',
+  connectionType: '连接方式',
+  uptime: '运行时间',
+  target: '目标',
+  concentration: '浓度',
+  jarSize: '容器大小',
+  efficiency: '效率',
+  power: '功率',
+  dutyCycle: '占空比',
+  start: '开始',
+  stop: '停止',
+  deploy: '推送到设备',
+  lastDeploy: '上次推送',
+  never: '从未',
+  voltage: '电压',
+  current: '电流',
+  powerW: '功率',
+  coulombs: '库仑',
+  gramsProduced: '已产生 NaOCl',
+  estimatedPpm: '估计浓度',
+  progress: '进度',
+  eta: '预计完成',
+  treatable: '可处理水量',
+  energyUsed: '已用能量',
+  sessions: '会话',
+  noSessions: '尚无会话记录',
+  exportCsv: '导出 CSV',
+  sessionStart: '开始时间',
+  sessionDuration: '时长',
+  sessionGrams: '克数',
+  sessionPpm: '估计 PPM',
+  sessionEff: '效率',
+  sessionStatus: '状态',
+  complete: '完成',
+  interrupted: '中断',
+  settings: '设置',
+  connectionSettings: '连接',
+  preferences: '偏好设置',
+  language: '语言',
+  advanced: '高级',
+  efficiencyOverride: '效率覆盖',
+  maxCurrent: '最大电流 (A)',
+  maxRuntime: '最大运行时间 (分钟)',
+  about: '关于',
+  version: '版本',
+  docs: '文档',
+  assemblyGuide: '组装指南',
+  chemistryExplained: '化学原理',
+  wiringDiagram: '接线图',
+  autoStop: '达到目标时自动停止',
+  running: '运行中',
+  idle: '待机',
+  targetReached: '已达到目标',
+  safeToUse: '可安全用于水处理',
+  electrodes: '电极',
+  electrodeType: '电极材料',
+  electrodeHealth: '电极状态',
+  resetElectrode: '重置（已安装新电极）',
+  hoursUsed: '已使用小时数',
+  hoursRemaining: '剩余小时数',
+  energyCost: '能量成本',
+  graphite: '石墨',
+  titaniumMmo: '钛 MMO',
+  platinum: '铂金',
+}
+
+export default zh

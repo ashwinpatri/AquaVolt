@@ -34,7 +34,15 @@ export const MOCK_INTERVAL_MS = 500          // how often mock data updates
 export const CHART_WINDOW = 120              // seconds of history to show in charts
 
 export const LANGUAGES: { code: string; label: string; flag: string }[] = [
-  { code: 'en', label: 'English',  flag: '🇬🇧' },
-  { code: 'de', label: 'Deutsch',  flag: '🇩🇪' },
-  { code: 'ru', label: 'Русский',  flag: '🇷🇺' },
+  { code: 'en', label: 'English',    flag: '🇬🇧' },
+  { code: 'zh', label: '中文',        flag: '🇨🇳' },
+  { code: 'hi', label: 'हिन्दी',      flag: '🇮🇳' },
+  { code: 'es', label: 'Español',    flag: '🇪🇸' },
+  { code: 'ar', label: 'العربية',    flag: '🇸🇦' },
+  { code: 'fr', label: 'Français',   flag: '🇫🇷' },
+  { code: 'bn', label: 'বাংলা',       flag: '🇧🇩' },
+  { code: 'pt', label: 'Português',  flag: '🇧🇷' },
+  { code: 'id', label: 'Indonesia',  flag: '🇮🇩' },
+  { code: 'de', label: 'Deutsch',    flag: '🇩🇪' },
+  { code: 'ru', label: 'Русский',    flag: '🇷🇺' },
 ]
