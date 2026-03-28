@@ -20,6 +20,17 @@ pub fn run() {
     tauri::Builder::default()
         .plugin(tauri_plugin_opener::init())
         .invoke_handler(tauri::generate_handler![open_doc])
+        .setup(|app| {
+            let bytes = include_bytes!("../icons/128x128.png");
+            let img = image::load_from_memory(bytes).expect("failed to load icon");
+            let rgba = img.to_rgba8();
+            let (w, h) = rgba.dimensions();
+            let icon = tauri::image::Image::new_owned(rgba.into_raw(), w, h);
+            if let Some(window) = app.get_webview_window("main") {
+                let _ = window.set_icon(icon);
+            }
+            Ok(())
+        })
         .run(tauri::generate_context!())
         .expect("error while running tauri application")
 }
