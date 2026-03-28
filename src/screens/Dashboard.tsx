@@ -26,7 +26,7 @@ export default function Dashboard() {
       ) : (
         <div style={{ flex: 1, display: 'flex', overflow: 'hidden' }}>
           <Sidebar />
-          <div style={{ flex: 1, overflow: 'hidden' }}>
+          <div style={{ flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
             {activeTab === 'dashboard'  && <RightPanel />}
             {activeTab === 'sessionlog' && <SessionLog />}
           </div>
