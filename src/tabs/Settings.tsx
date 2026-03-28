@@ -1,9 +1,10 @@
-import { Usb, Bluetooth, BookOpen, ArrowLeft, Lock } from 'lucide-react'
-import { useState, useRef } from 'react'
+import { Usb, Bluetooth, BookOpen, ArrowLeft, Lock, RotateCcw } from 'lucide-react'
+import { VERSION } from '../version'
+import { useState } from 'react'
 import { useAppStore } from '../store/appStore'
 import { usePiConnection } from '../hooks/usePiConnection'
 import { useLanguage } from '../App'
-import { LANGUAGES, ELECTRODE_SPECS } from '../utils/constants'
+import { LANGUAGES, ELECTRODE_SPECS, DEFAULT_EFFICIENCY, MAX_CURRENT_DEFAULT, MAX_RUNTIME_DEFAULT } from '../utils/constants'
 import DocsViewer from '../components/docs/DocsViewer'
 import type { Language, ElectrodeType } from '../types'
 
@@ -36,52 +37,6 @@ function NumberInput({ value, onChange, min, max, step = 1 }: { value: number; o
   )
 }
 
-function SlideToUnlock({ onUnlock }: { onUnlock: () => void }) {
-  const [pos, setPos]       = useState(0)
-  const [dragging, setDragging] = useState(false)
-  const trackRef = useRef<HTMLDivElement>(null)
-  const THUMB = 44
-
-  const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
-    e.currentTarget.setPointerCapture(e.pointerId)
-    setDragging(true)
-  }
-  const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
-    if (!dragging || !trackRef.current) return
-    const rect = trackRef.current.getBoundingClientRect()
-    const max  = rect.width - THUMB
-    const x    = Math.max(0, Math.min(e.clientX - rect.left - THUMB / 2, max))
-    const ratio = x / max
-    setPos(ratio)
-    if (ratio >= 0.92) { setDragging(false); onUnlock() }
-  }
-  const handlePointerUp = () => { if (dragging) { setDragging(false); setPos(0) } }
-
-  const trackW   = trackRef.current?.getBoundingClientRect().width ?? 0
-  const thumbLeft = pos * Math.max(0, trackW - THUMB)
-
-  return (
-    <div ref={trackRef} style={{ position: 'relative', height: 42, background: 'var(--bg-tertiary)', border: '1px solid var(--bg-border)', borderRadius: 21, overflow: 'hidden', userSelect: 'none' }}>
-      <div style={{ position: 'absolute', top: 0, left: 0, bottom: 0, width: thumbLeft + THUMB / 2, background: 'rgba(124,58,237,0.15)', transition: dragging ? 'none' : 'width 0.3s ease' }} />
-      <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '11px', color: 'var(--text-muted)', pointerEvents: 'none', letterSpacing: '0.06em', fontWeight: 500 }}>
-        SLIDE TO UNLOCK ADVANCED
-      </div>
-      <div
-        onPointerDown={handlePointerDown} onPointerMove={handlePointerMove}
-        onPointerUp={handlePointerUp}     onPointerCancel={handlePointerUp}
-        style={{
-          position: 'absolute', top: 3, bottom: 3, left: thumbLeft, width: THUMB - 6,
-          background: 'var(--purple-600)', borderRadius: 18, cursor: 'grab',
-          display: 'flex', alignItems: 'center', justifyContent: 'center',
-          transition: dragging ? 'none' : 'left 0.3s ease',
-          boxShadow: '0 2px 8px rgba(0,0,0,0.35)',
-        }}
-      >
-        <span style={{ color: '#fff', fontSize: '16px', pointerEvents: 'none' }}>›</span>
-      </div>
-    </div>
-  )
-}
 
 function Toggle({ value, onChange }: { value: boolean; onChange: (v: boolean) => void }) {
   return (
@@ -205,17 +160,58 @@ export default function Settings({ onClose }: { onClose: () => void }) {
               {advancedUnlocked ? (
                 <>
                   <SettingRow label={t.efficiencyOverride}>
-                    <NumberInput value={Math.round(config.efficiency * 100)} onChange={v => updateConfig({ efficiency: v / 100 })} min={10} max={100} />
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                      <NumberInput value={Math.round(config.efficiency * 100)} onChange={v => updateConfig({ efficiency: v / 100 })} min={10} max={100} />
+                      <button onClick={() => updateConfig({ efficiency: DEFAULT_EFFICIENCY })} title="Reset to default" style={{ color: 'var(--text-muted)', cursor: 'pointer', padding: '4px', borderRadius: 'var(--radius-sm)', border: '1px solid var(--bg-border)', background: 'var(--bg-tertiary)', display: 'flex', alignItems: 'center' }}
+                        onMouseEnter={e => { e.currentTarget.style.color = 'var(--text-primary)'; e.currentTarget.style.borderColor = 'var(--purple-600)' }}
+                        onMouseLeave={e => { e.currentTarget.style.color = 'var(--text-muted)'; e.currentTarget.style.borderColor = 'var(--bg-border)' }}
+                      ><RotateCcw size={12} /></button>
+                    </div>
                   </SettingRow>
+                  <p style={{ fontSize: '11px', color: 'var(--red)', marginTop: '-8px', marginBottom: '12px', lineHeight: '1.5' }}>
+                    Inaccurate values cause miscalculated NaOCl output. Too high = overdosing (harmful chlorine levels); too low = underdosing (ineffective treatment).
+                  </p>
+
                   <SettingRow label={t.maxCurrent}>
-                    <NumberInput value={config.maxCurrent} onChange={v => updateConfig({ maxCurrent: v })} min={0.5} max={10} step={0.5} />
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                      <NumberInput value={config.maxCurrent} onChange={v => updateConfig({ maxCurrent: v })} min={0.5} max={10} step={0.5} />
+                      <button onClick={() => updateConfig({ maxCurrent: MAX_CURRENT_DEFAULT })} title="Reset to default" style={{ color: 'var(--text-muted)', cursor: 'pointer', padding: '4px', borderRadius: 'var(--radius-sm)', border: '1px solid var(--bg-border)', background: 'var(--bg-tertiary)', display: 'flex', alignItems: 'center' }}
+                        onMouseEnter={e => { e.currentTarget.style.color = 'var(--text-primary)'; e.currentTarget.style.borderColor = 'var(--purple-600)' }}
+                        onMouseLeave={e => { e.currentTarget.style.color = 'var(--text-muted)'; e.currentTarget.style.borderColor = 'var(--bg-border)' }}
+                      ><RotateCcw size={12} /></button>
+                    </div>
                   </SettingRow>
+                  <p style={{ fontSize: '11px', color: 'var(--red)', marginTop: '-8px', marginBottom: '12px', lineHeight: '1.5' }}>
+                    Exceeding safe limits overheats the electrolytic cell, rapidly degrades electrodes, and can produce chlorine gas. Do not exceed your cell's rated current.
+                  </p>
+
                   <SettingRow label={t.maxRuntime}>
-                    <NumberInput value={config.maxRuntime} onChange={v => updateConfig({ maxRuntime: v })} min={1} max={480} />
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                      <NumberInput value={config.maxRuntime} onChange={v => updateConfig({ maxRuntime: v })} min={1} max={480} />
+                      <button onClick={() => updateConfig({ maxRuntime: MAX_RUNTIME_DEFAULT })} title="Reset to default" style={{ color: 'var(--text-muted)', cursor: 'pointer', padding: '4px', borderRadius: 'var(--radius-sm)', border: '1px solid var(--bg-border)', background: 'var(--bg-tertiary)', display: 'flex', alignItems: 'center' }}
+                        onMouseEnter={e => { e.currentTarget.style.color = 'var(--text-primary)'; e.currentTarget.style.borderColor = 'var(--purple-600)' }}
+                        onMouseLeave={e => { e.currentTarget.style.color = 'var(--text-muted)'; e.currentTarget.style.borderColor = 'var(--bg-border)' }}
+                      ><RotateCcw size={12} /></button>
+                    </div>
                   </SettingRow>
+                  <p style={{ fontSize: '11px', color: 'var(--red)', marginTop: '-8px', marginBottom: '12px', lineHeight: '1.5' }}>
+                    Extended runtimes without auto-stop can over-chlorinate water to unsafe levels and cause thermal damage to the cell.
+                  </p>
+
                   <SettingRow label={t.autoStop}>
-                    <Toggle value={config.autoStop} onChange={v => updateConfig({ autoStop: v })} />
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                      <Toggle value={config.autoStop} onChange={v => updateConfig({ autoStop: v })} />
+                      <button onClick={() => updateConfig({ autoStop: true })} title="Reset to default" style={{ color: 'var(--text-muted)', cursor: 'pointer', padding: '4px', borderRadius: 'var(--radius-sm)', border: '1px solid var(--bg-border)', background: 'var(--bg-tertiary)', display: 'flex', alignItems: 'center' }}
+                        onMouseEnter={e => { e.currentTarget.style.color = 'var(--text-primary)'; e.currentTarget.style.borderColor = 'var(--purple-600)' }}
+                        onMouseLeave={e => { e.currentTarget.style.color = 'var(--text-muted)'; e.currentTarget.style.borderColor = 'var(--bg-border)' }}
+                      ><RotateCcw size={12} /></button>
+                    </div>
                   </SettingRow>
+                  {!config.autoStop && (
+                    <p style={{ fontSize: '11px', color: 'var(--red)', marginTop: '-8px', marginBottom: '12px', lineHeight: '1.5' }}>
+                      Without auto-stop the session runs until manually stopped. Over-chlorination can make water unsafe and corrode equipment.
+                    </p>
+                  )}
                   <button onClick={() => setAdvancedUnlocked(false)}
                     style={{ display: 'flex', alignItems: 'center', gap: '6px', marginTop: '4px', padding: '5px 10px', borderRadius: 'var(--radius-sm)', border: '1px solid var(--bg-border)', background: 'transparent', color: 'var(--text-muted)', fontSize: '11px', cursor: 'pointer' }}
                   >
@@ -223,7 +219,18 @@ export default function Settings({ onClose }: { onClose: () => void }) {
                   </button>
                 </>
               ) : (
-                <SlideToUnlock onUnlock={() => setAdvancedUnlocked(true)} />
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <input
+                    type="checkbox"
+                    id="advanced-unlock"
+                    checked={false}
+                    onChange={e => { if (e.target.checked) setAdvancedUnlocked(true) }}
+                    style={{ width: '16px', height: '16px', accentColor: 'var(--purple-600)', cursor: 'pointer' }}
+                  />
+                  <label htmlFor="advanced-unlock" style={{ fontSize: '13px', color: 'var(--text-muted)', cursor: 'pointer', userSelect: 'none' }}>
+                    Enable advanced settings
+                  </label>
+                </div>
               )}
             </Section>
 
@@ -239,8 +246,22 @@ export default function Settings({ onClose }: { onClose: () => void }) {
             </Section>
 
             <Section title={t.about}>
-              <SettingRow label={t.version}><span style={{ fontSize: '13px', color: 'var(--text-muted)' }}>1.0.0</span></SettingRow>
+              <SettingRow label={t.version}><span style={{ fontSize: '13px', color: 'var(--text-muted)' }}>{VERSION}</span></SettingRow>
               <SettingRow label="Protocol"><span style={{ fontSize: '13px', color: 'var(--text-muted)' }}>Faraday's Law (INA219)</span></SettingRow>
+              <SettingRow label="Developers">
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '4px' }}>
+                  <a href="https://github.com/ashwinpatri" target="_blank" rel="noreferrer"
+                    style={{ fontSize: '13px', color: 'var(--purple-400)', textDecoration: 'none' }}
+                    onMouseEnter={e => (e.currentTarget.style.textDecoration = 'underline')}
+                    onMouseLeave={e => (e.currentTarget.style.textDecoration = 'none')}
+                  >@ashwinpatri</a>
+                  <a href="https://github.com/Dwalker1000" target="_blank" rel="noreferrer"
+                    style={{ fontSize: '13px', color: 'var(--purple-400)', textDecoration: 'none' }}
+                    onMouseEnter={e => (e.currentTarget.style.textDecoration = 'underline')}
+                    onMouseLeave={e => (e.currentTarget.style.textDecoration = 'none')}
+                  >@Dwalker1000</a>
+                </div>
+              </SettingRow>
             </Section>
 
             {/* Danger zone */}

@@ -1,0 +1,102 @@
+import type { Translations } from '../types'
+
+const af: Translations = {
+  selectLanguage: 'Kies jou taal om voort te gaan',
+  continue: 'Gaan voort',
+  termsTitle: 'Diensvoorwaardes',
+  termsScroll: 'Blaai asseblief na onder om voort te gaan',
+  termsAgree: 'Ek het die Diensvoorwaardes gelees en stem daarmee saam',
+  termsBody: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+
+Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.
+
+At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.
+
+Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.
+
+Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus.
+
+Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.`,
+  connected: 'Verbind',
+  disconnected: 'Ontkoppel',
+  connecting: 'Verbinding...',
+  connectionFailed: 'Verbinding misluk',
+  connectUsb: 'Verbind via USB',
+  connectBluetooth: 'Verbind via Bluetooth',
+  connectionHint: 'Maak seker jou toestel is aangeskakel',
+  connectedTo: 'Verbind',
+  disconnect: 'Ontkoppel',
+  dashboard: 'Paneelbord',
+  sessionLog: 'Sessierekord',
+  device: 'Toestel',
+  piModel: 'Model',
+  connectionType: 'Verbinding',
+  uptime: 'Bedryftyd',
+  target: 'Teiken',
+  concentration: 'Konsentrasie',
+  jarSize: 'Kruikgrootte',
+  efficiency: 'Doeltreffendheid',
+  power: 'Krag',
+  dutyCycle: 'Werksiklus',
+  start: 'Begin',
+  stop: 'Stop',
+  deploy: 'Stuur na toestel',
+  lastDeploy: 'Laas gestuur',
+  never: 'Nooit',
+  voltage: 'Spanning',
+  current: 'Stroom',
+  powerW: 'Krag',
+  coulombs: 'Coulombs',
+  gramsProduced: 'NaOCl Geproduseer',
+  estimatedPpm: 'Geskatte Konsentrasie',
+  progress: 'Vordering',
+  eta: 'Geskatte tyd',
+  treatable: 'Behandelbare Water',
+  energyUsed: 'Energie Gebruik',
+  sessions: 'Sessies',
+  noSessions: 'Geen sessies aangeteken nie',
+  exportCsv: 'Voer CSV uit',
+  sessionStart: 'Begintyd',
+  sessionDuration: 'Duur',
+  sessionGrams: 'Gram',
+  sessionPpm: 'Geskatte PPM',
+  sessionEff: 'Doeltreffendheid',
+  sessionStatus: 'Status',
+  complete: 'Voltooi',
+  interrupted: 'Onderbreek',
+  settings: 'Instellings',
+  connectionSettings: 'Verbinding',
+  preferences: 'Voorkeure',
+  language: 'Taal',
+  advanced: 'Gevorderd',
+  efficiencyOverride: 'Doeltreffendheidsoorstyging',
+  maxCurrent: 'Maksimum Stroom (A)',
+  maxRuntime: 'Maksimum Looptyd (min)',
+  about: 'Oor',
+  version: 'Weergawe',
+  docs: 'Dokumentasie',
+  assemblyGuide: 'Monteringsgids',
+  chemistryExplained: 'Chemie Verduidelik',
+  wiringDiagram: 'Bedradingdiagram',
+  autoStop: 'Outomatiese stop by teiken',
+  running: 'Besig',
+  idle: 'Ledig',
+  targetReached: 'Teiken Bereik',
+  safeToUse: 'Veilig vir waterbehandeling',
+  electrodes: 'Elektrodes',
+  electrodeType: 'Elektrodemateriaal',
+  electrodeHealth: 'Elektrodegezondheid',
+  resetElectrode: 'Herstel (Nuwe Elektrodes Geïnstalleer)',
+  hoursUsed: 'Ure Gebruik',
+  hoursRemaining: 'Ure Oor',
+  energyCost: 'Energiekoste',
+  graphite: 'Grafiet',
+  titaniumMmo: 'Titaan MMO',
+  platinum: 'Platinum',
+}
+
+export default af

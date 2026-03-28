@@ -1,0 +1,102 @@
+import type { Translations } from '../types'
+
+const yo: Translations = {
+  selectLanguage: 'Yan ede rẹ lati tẹsiwaju',
+  continue: 'Tẹsiwaju',
+  termsTitle: 'Awọn Ofin Iṣẹ',
+  termsScroll: 'Jọwọ yi scrollu si isalẹ lati tẹsiwaju',
+  termsAgree: 'Mo ti ka ti Mo si gba pẹlu Awọn Ofin Iṣẹ',
+  termsBody: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+
+Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.
+
+At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.
+
+Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.
+
+Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus.
+
+Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.`,
+  connected: 'Ti sopọ',
+  disconnected: 'Ti ya sọtọ',
+  connecting: 'N sopọ...',
+  connectionFailed: 'Asopọ kuna',
+  connectUsb: 'Sopọ nipasẹ USB',
+  connectBluetooth: 'Sopọ nipasẹ Bluetooth',
+  connectionHint: 'Rii daju pe ẹrọ rẹ wa ni ipo ṣiṣẹ',
+  connectedTo: 'Ti sopọ',
+  disconnect: 'Ya sọtọ',
+  dashboard: 'Dasibodu',
+  sessionLog: 'Akọsilẹ Igba',
+  device: 'Ẹrọ',
+  piModel: 'Awoṣe',
+  connectionType: 'Asopọ',
+  uptime: 'Akoko Ṣiṣẹ',
+  target: 'Ibi-afẹde',
+  concentration: 'Ifọkansi',
+  jarSize: 'Iwọn Ago',
+  efficiency: 'Ṣiṣe',
+  power: 'Agbara',
+  dutyCycle: 'Iyipo Iṣẹ',
+  start: 'Bẹrẹ',
+  stop: 'Duro',
+  deploy: 'Fi ranṣẹ si Ẹrọ',
+  lastDeploy: 'Fi ranṣẹ kẹhin',
+  never: 'Rara',
+  voltage: 'Foliteji',
+  current: 'Isiyi',
+  powerW: 'Agbara',
+  coulombs: 'Coulombs',
+  gramsProduced: 'NaOCl Ti Ṣe',
+  estimatedPpm: 'Ifọkansi Ti a Ṣe iṣiro',
+  progress: 'Ilọsiwaju',
+  eta: 'Akoko Ti a Ṣe iṣiro',
+  treatable: 'Omi Ti o le Ṣe itọju',
+  energyUsed: 'Agbara Ti a Lo',
+  sessions: 'Awọn Igba',
+  noSessions: 'Ko si awọn igba ti a gbasilẹ',
+  exportCsv: 'Gbe jade CSV',
+  sessionStart: 'Akoko Ibẹrẹ',
+  sessionDuration: 'Iye Akoko',
+  sessionGrams: 'Giramu',
+  sessionPpm: 'PPM Ti a Ṣe iṣiro',
+  sessionEff: 'Ṣiṣe',
+  sessionStatus: 'Ipo',
+  complete: 'Pari',
+  interrupted: 'Dẹkun',
+  settings: 'Eto',
+  connectionSettings: 'Asopọ',
+  preferences: 'Ayanfẹ',
+  language: 'Ede',
+  advanced: 'Ti ilọsiwaju',
+  efficiencyOverride: 'Àtúnṣe Ṣiṣe',
+  maxCurrent: 'Isiyi Ti o pọ julọ (A)',
+  maxRuntime: 'Akoko Ṣiṣẹ Ti o pọ julọ (min)',
+  about: 'Nípa',
+  version: 'Ẹya',
+  docs: 'Awọn Iwe Aṣẹ',
+  assemblyGuide: 'Itọnisọna Apejọ',
+  chemistryExplained: 'Kemistri Ti a Ṣalaye',
+  wiringDiagram: 'Aworan Okun',
+  autoStop: 'Duro Laifọwọyi ni ibi-afẹde',
+  running: 'N ṣiṣẹ',
+  idle: 'Sinmi',
+  targetReached: 'Ibi-afẹde Ti de',
+  safeToUse: 'Ailewu fun itọju omi',
+  electrodes: 'Awọn Amọna',
+  electrodeType: 'Ohun elo Amọna',
+  electrodeHealth: 'Ilera Amọna',
+  resetElectrode: 'Tun ṣeto (Awọn Amọna Tuntun Ti fi sori ẹrọ)',
+  hoursUsed: 'Awọn Wakati Ti a Lo',
+  hoursRemaining: 'Awọn Wakati Ti o Ku',
+  energyCost: 'Idiyele Agbara',
+  graphite: 'Grafaiti',
+  titaniumMmo: 'Titanium MMO',
+  platinum: 'Platinum',
+}
+
+export default yo

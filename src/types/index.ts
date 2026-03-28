@@ -121,4 +121,4 @@ export interface Translations {
   platinum: string
 }
 
-export type Language = 'en' | 'de' | 'ru' | 'zh' | 'hi' | 'es' | 'ar' | 'fr' | 'bn' | 'pt' | 'id'
+export type Language = 'en' | 'de' | 'ru' | 'zh' | 'hi' | 'es' | 'ar' | 'fr' | 'bn' | 'pt' | 'id' | 'af' | 'yo' | 'sw'

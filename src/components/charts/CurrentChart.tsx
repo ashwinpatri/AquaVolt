@@ -19,7 +19,7 @@ const CustomTooltip = ({ active, payload }: CustomTooltipProps) => {
   )
 }
 
-export default function CurrentChart() {
+export default function CurrentChart({ flex }: { flex?: boolean }) {
   const { chartHistory } = useAppStore()
   const t = useLanguage()
 
@@ -33,11 +33,12 @@ export default function CurrentChart() {
     <div style={{
       background: 'var(--bg-secondary)', border: '1px solid var(--bg-border)',
       borderRadius: 'var(--radius-lg)', padding: '16px 18px',
+      ...(flex ? { flex: 1, display: 'flex', flexDirection: 'column', minHeight: 0 } : {}),
     }}>
       <span style={{ fontSize: '11px', fontWeight: 500, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
         {t.current} (A)
       </span>
-      <div style={{ height: 120, marginTop: '10px' }}>
+      <div style={flex ? { flex: 1, minHeight: 0, marginTop: '10px' } : { height: 120, marginTop: '10px' }}>
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={data} margin={{ top: 4, right: 4, bottom: 0, left: -20 }}>
             <CartesianGrid stroke="var(--bg-tertiary)" strokeDasharray="3 3" vertical={false} />

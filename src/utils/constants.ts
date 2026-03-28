@@ -33,16 +33,20 @@ export const ELECTRODE_SPECS = {
 export const MOCK_INTERVAL_MS = 500          // how often mock data updates
 export const CHART_WINDOW = 120              // seconds of history to show in charts
 
+// Ordered by total speakers (native + L2), largest first
 export const LANGUAGES: { code: string; label: string; flag: string }[] = [
-  { code: 'en', label: 'English',    flag: '🇬🇧' },
-  { code: 'zh', label: '中文',        flag: '🇨🇳' },
-  { code: 'hi', label: 'हिन्दी',      flag: '🇮🇳' },
-  { code: 'es', label: 'Español',    flag: '🇪🇸' },
-  { code: 'ar', label: 'العربية',    flag: '🇸🇦' },
-  { code: 'fr', label: 'Français',   flag: '🇫🇷' },
-  { code: 'bn', label: 'বাংলা',       flag: '🇧🇩' },
-  { code: 'pt', label: 'Português',  flag: '🇧🇷' },
-  { code: 'id', label: 'Indonesia',  flag: '🇮🇩' },
-  { code: 'de', label: 'Deutsch',    flag: '🇩🇪' },
-  { code: 'ru', label: 'Русский',    flag: '🇷🇺' },
+  { code: 'en', label: 'English',    flag: '🇬🇧' }, // ~1.5B
+  { code: 'zh', label: '中文',        flag: '🇨🇳' }, // ~1.1B
+  { code: 'hi', label: 'हिन्दी',      flag: '🇮🇳' }, // ~600M
+  { code: 'es', label: 'Español',    flag: '🇪🇸' }, // ~560M
+  { code: 'ar', label: 'العربية',    flag: '🇸🇦' }, // ~420M
+  { code: 'fr', label: 'Français',   flag: '🇫🇷' }, // ~280M
+  { code: 'bn', label: 'বাংলা',       flag: '🇧🇩' }, // ~270M
+  { code: 'pt', label: 'Português',  flag: '🇧🇷' }, // ~250M
+  { code: 'id', label: 'Indonesia',  flag: '🇮🇩' }, // ~200M
+  { code: 'sw', label: 'Kiswahili',  flag: '🇰🇪' }, // ~200M
+  { code: 'ru', label: 'Русский',    flag: '🇷🇺' }, // ~155M
+  { code: 'de', label: 'Deutsch',    flag: '🇩🇪' }, // ~132M
+  { code: 'yo', label: 'Yorùbá',     flag: '🇳🇬' }, // ~50M
+  { code: 'af', label: 'Afrikaans',  flag: '🇿🇦' }, // ~17M
 ]

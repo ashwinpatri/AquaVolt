@@ -1,4 +1,5 @@
 import StatsGrid from '../stats/StatsGrid'
+import StatCard from '../stats/StatCard'
 import ProgressRing from '../charts/ProgressRing'
 import CurrentChart from '../charts/CurrentChart'
 import PowerChart from '../charts/PowerChart'
@@ -11,8 +12,10 @@ export default function RightPanel() {
   const { liveData, config, connected } = useAppStore()
   const t = useLanguage()
 
-  const grams     = gramsProduced(liveData.charge, config.efficiency)
-  const treatable = litersTreatable(grams)
+  const grams      = gramsProduced(liveData.charge, config.efficiency)
+  const treatable  = litersTreatable(grams)
+  const sessionWh  = parseFloat(((liveData.charge * liveData.voltage) / 3600).toFixed(3))
+  const whPerGram  = connected && grams > 0 ? parseFloat((sessionWh / grams).toFixed(2)) : null
 
   return (
     <div style={{ flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden', position: 'relative' }}>
@@ -23,11 +26,15 @@ export default function RightPanel() {
       >
         <StatsGrid />
 
-        <div style={{ display: 'grid', gridTemplateColumns: '200px 1fr', gap: '14px', alignItems: 'start' }}>
-          <ProgressRing />
+        <div style={{ display: 'grid', gridTemplateColumns: '200px 1fr', gap: '14px' }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-            <CurrentChart />
-            <PowerChart />
+            <ProgressRing />
+            <StatCard label={t.energyUsed} value={connected ? sessionWh.toFixed(3) : '—'} unit="Wh" />
+            <StatCard label={t.energyCost} value={connected && whPerGram !== null ? whPerGram.toFixed(2) : '—'} unit="Wh/g" />
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', height: '100%' }}>
+            <CurrentChart flex />
+            <PowerChart flex />
           </div>
         </div>
 

@@ -48,6 +48,20 @@ export default function DocsViewer({ onClose }: { onClose: () => void }) {
         <p style={{ fontSize: '11px', color: 'var(--text-muted)', textAlign: 'center', marginTop: '16px' }}>
           Available offline
         </p>
+        <p style={{ fontSize: '11px', color: 'var(--text-muted)', textAlign: 'center', marginTop: '8px' }}>
+          Built by{' '}
+          <a href="https://github.com/ashwinpatri" target="_blank" rel="noreferrer"
+            style={{ color: 'var(--purple-400)', textDecoration: 'none' }}
+            onMouseEnter={e => (e.currentTarget.style.textDecoration = 'underline')}
+            onMouseLeave={e => (e.currentTarget.style.textDecoration = 'none')}
+          >@ashwinpatri</a>
+          {' & '}
+          <a href="https://github.com/Dwalker1000" target="_blank" rel="noreferrer"
+            style={{ color: 'var(--purple-400)', textDecoration: 'none' }}
+            onMouseEnter={e => (e.currentTarget.style.textDecoration = 'underline')}
+            onMouseLeave={e => (e.currentTarget.style.textDecoration = 'none')}
+          >@Dwalker1000</a>
+        </p>
       </div>
     </>,
     document.body

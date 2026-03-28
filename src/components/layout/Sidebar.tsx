@@ -1,5 +1,7 @@
+import { RotateCcw } from 'lucide-react'
 import { useAppStore } from '../../store/appStore'
 import { useLanguage } from '../../App'
+import { PPM_DEFAULT, DUTY_DEFAULT, DEFAULT_EFFICIENCY } from '../../utils/constants'
 import ConcentrationSlider from '../controls/ConcentrationSlider'
 import PowerSlider from '../controls/PowerSlider'
 import VolumeSelect from '../controls/VolumeSelect'
@@ -34,8 +36,16 @@ function formatUptime(seconds: number): string {
 }
 
 export default function Sidebar() {
-  const { connected, connectionType, deviceModel, liveData, config } = useAppStore()
+  const { connected, connectionType, deviceModel, liveData, config, updateConfig } = useAppStore()
   const t = useLanguage()
+
+  const resetDashboard = () => updateConfig({
+    targetPpm: PPM_DEFAULT,
+    volumeLiters: 1.0,
+    customVolume: null,
+    dutyCycle: DUTY_DEFAULT,
+    efficiency: DEFAULT_EFFICIENCY,
+  })
 
   return (
     <div style={{
@@ -54,7 +64,15 @@ export default function Sidebar() {
 
         <Divider />
 
-        <SectionLabel>{t.target}</SectionLabel>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '12px', paddingBottom: '8px', borderBottom: '1px solid var(--bg-border)' }}>
+          <span style={{ fontSize: '10px', fontWeight: 600, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>{t.target}</span>
+          <button onClick={resetDashboard} title="Reset to defaults" style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '10px', color: 'var(--text-muted)', cursor: 'pointer', padding: '2px 6px', borderRadius: 'var(--radius-sm)', border: '1px solid var(--bg-border)', background: 'transparent' }}
+            onMouseEnter={e => { e.currentTarget.style.color = 'var(--text-primary)'; e.currentTarget.style.borderColor = 'var(--purple-600)' }}
+            onMouseLeave={e => { e.currentTarget.style.color = 'var(--text-muted)'; e.currentTarget.style.borderColor = 'var(--bg-border)' }}
+          >
+            <RotateCcw size={10} /> Reset
+          </button>
+        </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
           <ConcentrationSlider disabled={!connected} />
           <VolumeSelect        disabled={!connected} />

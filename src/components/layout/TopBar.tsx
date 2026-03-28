@@ -30,18 +30,12 @@ export default function TopBar({ onDocsOpen }: { onDocsOpen: () => void }) {
         }}
       >
         {/* Logo */}
-        <div className="no-drag" style={{ display: 'flex', alignItems: 'center', gap: '8px', marginRight: '8px' }}>
-          <div style={{
-            width:        '26px', height: '26px', borderRadius: '6px',
-            background:   'linear-gradient(135deg, var(--purple-700), var(--purple-500))',
-            display:      'flex', alignItems: 'center', justifyContent: 'center',
-            boxShadow:    '0 0 12px var(--purple-glow)',
-            fontSize:     '13px', fontWeight: 800, color: '#fff',
-          }}>A</div>
-          <span style={{ fontSize: '14px', fontWeight: 700, color: 'var(--text-primary)', letterSpacing: '-0.01em' }}>
-            AquaVolt
-          </span>
-          <span style={{ fontSize: '10px', color: 'var(--text-muted)', fontWeight: 400 }}>v1.0.0</span>
+        <div className="no-drag" style={{ overflow: 'hidden', height: '46px', width: '210px', flexShrink: 0, marginRight: '4px', marginLeft: '-74px' }}>
+          <img
+            src="/src/assets/images/AquaVolt.png"
+            alt="AquaVolt"
+            style={{ height: '190px', width: 'auto', marginTop: '-65px', marginLeft: '-52px', display: 'block' }}
+          />
         </div>
 
         {/* Tab bar — centered */}

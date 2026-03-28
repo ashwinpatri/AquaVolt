@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { createPortal } from 'react-dom'
 import { Usb, Bluetooth, X, Loader } from 'lucide-react'
 import { useAppStore } from '../../store/appStore'
 import { usePiConnection } from '../../hooks/usePiConnection'
@@ -70,7 +71,7 @@ export default function ConnectionModal({ onClose }: { onClose: () => void }) {
     onClose()
   }
 
-  return (
+  return createPortal(
     <>
       <div onClick={onClose} style={{
         position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.6)',
@@ -147,6 +148,7 @@ export default function ConnectionModal({ onClose }: { onClose: () => void }) {
           </>
         )}
       </div>
-    </>
+    </>,
+    document.body
   )
 }

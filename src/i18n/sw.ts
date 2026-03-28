@@ -1,0 +1,102 @@
+import type { Translations } from '../types'
+
+const sw: Translations = {
+  selectLanguage: 'Chagua lugha yako ili kuendelea',
+  continue: 'Endelea',
+  termsTitle: 'Masharti ya Huduma',
+  termsScroll: 'Tafadhali sogeza chini ili kuendelea',
+  termsAgree: 'Nimesoma na nakubaliana na Masharti ya Huduma',
+  termsBody: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+
+Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.
+
+At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.
+
+Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.
+
+Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus.
+
+Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.`,
+  connected: 'Imeunganishwa',
+  disconnected: 'Imetenganishwa',
+  connecting: 'Inaunganisha...',
+  connectionFailed: 'Muunganisho umeshindwa',
+  connectUsb: 'Unganisha kupitia USB',
+  connectBluetooth: 'Unganisha kupitia Bluetooth',
+  connectionHint: 'Hakikisha kifaa chako kimewashwa',
+  connectedTo: 'Imeunganishwa',
+  disconnect: 'Tenganisha',
+  dashboard: 'Dashibodi',
+  sessionLog: 'Kumbukumbu ya Kipindi',
+  device: 'Kifaa',
+  piModel: 'Mfano',
+  connectionType: 'Muunganisho',
+  uptime: 'Muda wa Uendeshaji',
+  target: 'Lengo',
+  concentration: 'Mkusanyiko',
+  jarSize: 'Ukubwa wa Chombo',
+  efficiency: 'Ufanisi',
+  power: 'Nguvu',
+  dutyCycle: 'Mzunguko wa Kazi',
+  start: 'Anza',
+  stop: 'Simama',
+  deploy: 'Tuma kwa Kifaa',
+  lastDeploy: 'Ilitumwa mara ya mwisho',
+  never: 'Kamwe',
+  voltage: 'Voltage',
+  current: 'Mkondo',
+  powerW: 'Nguvu',
+  coulombs: 'Coulombs',
+  gramsProduced: 'NaOCl Iliyozalishwa',
+  estimatedPpm: 'Mkusanyiko Uliokadiriwa',
+  progress: 'Maendeleo',
+  eta: 'Muda Uliokadiriwa',
+  treatable: 'Maji Yanayoweza Kutibiwa',
+  energyUsed: 'Nishati Iliyotumika',
+  sessions: 'Vipindi',
+  noSessions: 'Hakuna vipindi vilivyorekodiwa',
+  exportCsv: 'Hamisha CSV',
+  sessionStart: 'Wakati wa Kuanza',
+  sessionDuration: 'Muda',
+  sessionGrams: 'Gramu',
+  sessionPpm: 'PPM Iliyokadiriwa',
+  sessionEff: 'Ufanisi',
+  sessionStatus: 'Hali',
+  complete: 'Imekamilika',
+  interrupted: 'Ilikatizwa',
+  settings: 'Mipangilio',
+  connectionSettings: 'Muunganisho',
+  preferences: 'Mapendeleo',
+  language: 'Lugha',
+  advanced: 'Ya Juu',
+  efficiencyOverride: 'Kubatilisha Ufanisi',
+  maxCurrent: 'Mkondo wa Juu (A)',
+  maxRuntime: 'Muda wa Juu wa Uendeshaji (min)',
+  about: 'Kuhusu',
+  version: 'Toleo',
+  docs: 'Hati',
+  assemblyGuide: 'Mwongozo wa Mkusanyiko',
+  chemistryExplained: 'Kemia Iliyoelezwa',
+  wiringDiagram: 'Mchoro wa Waya',
+  autoStop: 'Simama Moja kwa Moja kwenye Lengo',
+  running: 'Inafanya kazi',
+  idle: 'Ipo kimya',
+  targetReached: 'Lengo Limefikiwa',
+  safeToUse: 'Salama kutumia kwa matibabu ya maji',
+  electrodes: 'Elektrodi',
+  electrodeType: 'Nyenzo ya Elektrodi',
+  electrodeHealth: 'Afya ya Elektrodi',
+  resetElectrode: 'Weka Upya (Elektrodi Mpya Zimewekwa)',
+  hoursUsed: 'Masaa Yaliyotumika',
+  hoursRemaining: 'Masaa Yaliyobaki',
+  energyCost: 'Gharama ya Nishati',
+  graphite: 'Grafiti',
+  titaniumMmo: 'Titanium MMO',
+  platinum: 'Platinamu',
+}
+
+export default sw

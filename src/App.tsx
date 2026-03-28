@@ -12,11 +12,14 @@ import fr from './i18n/fr'
 import bn from './i18n/bn'
 import pt from './i18n/pt'
 import id from './i18n/id'
+import af from './i18n/af'
+import yo from './i18n/yo'
+import sw from './i18n/sw'
 import LanguageSelect from './screens/LanguageSelect'
 import TermsOfService from './screens/TermsOfService'
 import Dashboard from './screens/Dashboard'
 
-const TRANSLATIONS: Record<string, Translations> = { en, de, ru, zh, hi, es, ar, fr, bn, pt, id }
+const TRANSLATIONS: Record<string, Translations> = { en, de, ru, zh, hi, es, ar, fr, bn, pt, id, af, yo, sw }
 
 const LanguageContext = createContext<Translations>(en)
 export const useLanguage = (): Translations => useContext(LanguageContext)
