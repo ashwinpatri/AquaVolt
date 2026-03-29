@@ -20,11 +20,6 @@
   <img src="https://img.shields.io/badge/macOS%20(Apple%20Silicon)-Download-black?style=for-the-badge&logo=apple" alt="Download for macOS Apple Silicon" />
 </a>
 </td>
-<td align="center">
-<a href="https://github.com/ashwinpatri/AquaVolt/releases/latest/download/AquaVolt_1.1.4_x64.dmg">
-  <img src="https://img.shields.io/badge/macOS%20(Intel)-Download-lightgrey?style=for-the-badge&logo=apple" alt="Download for macOS Intel" />
-</a>
-</td>
 </tr>
 </table>
 
