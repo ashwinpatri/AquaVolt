@@ -28,6 +28,12 @@
 </tr>
 </table>
 
+<p align="center"><b>macOS (Apple Silicon) — First Time Setup</b><br>
+After downloading, double-click the <code>.tar.gz</code> to extract, then open Terminal and run:<br>
+<code>xattr -rd com.apple.quarantine ~/Downloads/AquaVolt.app</code><br>
+Then drag <code>AquaVolt.app</code> to your Applications folder and open it normally.
+</p>
+
 ---
 
 ## Overview
