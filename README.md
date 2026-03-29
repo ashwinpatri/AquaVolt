@@ -11,7 +11,7 @@
 <table align="center">
 <tr>
 <td align="center">
-<a href="https://github.com/ashwinpatri/AquaVolt/releases/latest/download/AquaVolt_1.1.4_x64-setup.exe">
+<a href="https://github.com/ashwinpatri/AquaVolt/releases/latest/download/AquaVolt_1.1.6_x64-setup.exe">
   <img src="https://img.shields.io/badge/Windows-Download-blue?style=for-the-badge&logo=windows" alt="Download for Windows" />
 </a>
 </td>
