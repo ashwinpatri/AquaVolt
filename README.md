@@ -44,9 +44,9 @@
 
 ## Overview
 
-AquaVolt is a native desktop application for Raspberry Pi–connected electrochemical systems that generate sodium hypochlorite (NaOCl) for water treatment.
+AquaVolt is a native desktop application for Raspberry Pi-connected electrochemical systems that generate sodium hypochlorite (NaOCl) for water treatment.
 
-The application streams real-time sensor data from an INA219 current and voltage sensor, computes chlorine production using Faraday’s Law, and provides an interface for monitoring, control, and session logging.
+The application streams real-time sensor data from an INA219 current and voltage sensor, computes chlorine production using Faraday's Law, and provides an interface for monitoring, control, and session logging.
 
 Built with Tauri 2, React, and TypeScript.
 
@@ -87,10 +87,10 @@ Persistent session history including:
 
 ## How It Works
 
-### Faraday’s Law
+### Faraday's Law
 
 <p align="center">
-  <img src="https://latex.codecogs.com/png.image?\dpi{140}\bg_white\color{black}\Large grams=\frac{Q\times M\times \eta}{n\times F}" alt="Faraday Law Equation" />
+  <img src="https://latex.codecogs.com/svg.image?%5Ccolor%7Bwhite%7D%20grams%3D%5Cfrac%7BQ%5Ctimes%20M%5Ctimes%20%5Ceta%7D%7Bn%5Ctimes%20F%7D" alt="Faraday Law Equation" width="300" />
 </p>
 
 Where:
@@ -103,29 +103,29 @@ Where:
 ### Concentration
 
 <p align="center">
-  <img src="https://latex.codecogs.com/png.image?\dpi{140}\bg_white\color{black}\Large ppm=\frac{grams}{volume_L}\times1000" alt="PPM Equation" />
+  <img src="https://latex.codecogs.com/svg.image?%5Ccolor%7Bwhite%7D%20ppm%3D%5Cfrac%7Bgrams%7D%7Bvolume_L%7D%5Ctimes1000" alt="PPM Equation" width="320" />
 </p>
 
 ### Time Estimation
 
 <p align="center">
-  <img src="https://latex.codecogs.com/png.image?\dpi{140}\bg_white\color{black}\Large ETA=\frac{Q_{remaining}}{I}" alt="ETA Equation" />
+  <img src="https://latex.codecogs.com/svg.image?%5Ccolor%7Bwhite%7D%20ETA%3D%5Cfrac%7BQ_%7Bremaining%7D%7D%7BI%7D" alt="ETA Equation" width="250" />
 </p>
 
 ---
 
 ## Tech Stack
 
-| Layer        | Details |
-|-------------|---------|
-| Desktop     | Tauri 2 with Rust backend, command-based IPC, and native packaging |
-| Frontend    | React 19 + TypeScript with hooks-based UI architecture |
-| State       | Zustand with persisted configuration and session state |
-| Build       | Vite for fast local development and optimized production builds |
-| Charts      | Recharts with rolling real-time data buffers |
-| Hardware I/O| INA219 current and voltage sensing over I²C on Raspberry Pi |
-| Connectivity | USB serial and Bluetooth transport between host app and device |
-| Computation | Charge integration, efficiency-adjusted NaOCl estimation, and runtime projection |
+| Layer         | Details |
+|---------------|---------|
+| Desktop       | Tauri 2 with Rust backend, command-based IPC, and native packaging |
+| Frontend      | React 19 + TypeScript with hooks-based UI architecture |
+| State         | Zustand with persisted configuration and session state |
+| Build         | Vite for fast local development and optimized production builds |
+| Charts        | Recharts with rolling real-time data buffers |
+| Hardware I/O  | INA219 current and voltage sensing over I²C on Raspberry Pi |
+| Connectivity  | USB serial and Bluetooth transport between host app and device |
+| Computation   | Charge integration, efficiency-adjusted NaOCl estimation, and runtime projection |
 
 ---
 
