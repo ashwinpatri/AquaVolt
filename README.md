@@ -8,32 +8,20 @@
   A desktop application for monitoring and controlling electrochemical water treatment cells — powered by Faraday's Law.
 </p>
 
-<p align="center">
-  <a href="https://github.com/ashwinpatri/AquaVolt/releases/latest/download/AquaVolt_1.1.3_x64-setup.exe">⬇️ Download for Windows</a>
-  &nbsp;&nbsp;|&nbsp;&nbsp;
-  <a href="https://github.com/ashwinpatri/AquaVolt/releases/latest/download/AquaVolt_1.1.3_aarch64.dmg">⬇️ Download for macOS (Apple Silicon)</a>
-  &nbsp;&nbsp;|&nbsp;&nbsp;
-  <a href="https://github.com/ashwinpatri/AquaVolt/releases/latest/download/AquaVolt_1.1.3_x64.dmg">⬇️ Download for macOS (Intel)</a>
-</p>
-
----
-
-## Downloads
-
 <table align="center">
 <tr>
 <td align="center">
-<a href="https://github.com/ashwinpatri/AquaVolt/releases/latest/download/AquaVolt_1.0.6_x64-setup.exe">
+<a href="https://github.com/ashwinpatri/AquaVolt/releases/latest/download/AquaVolt_1.1.4_x64-setup.exe">
   <img src="https://img.shields.io/badge/Windows-Download-blue?style=for-the-badge&logo=windows" alt="Download for Windows" />
 </a>
 </td>
 <td align="center">
-<a href="https://github.com/ashwinpatri/AquaVolt/releases/latest/download/AquaVolt_1.0.6_aarch64.dmg">
+<a href="https://github.com/ashwinpatri/AquaVolt/releases/latest/download/AquaVolt_aarch64.app.tar.gz">
   <img src="https://img.shields.io/badge/macOS%20(Apple%20Silicon)-Download-black?style=for-the-badge&logo=apple" alt="Download for macOS Apple Silicon" />
 </a>
 </td>
 <td align="center">
-<a href="https://github.com/ashwinpatri/AquaVolt/releases/latest/download/AquaVolt_1.0.6_x64.dmg">
+<a href="https://github.com/ashwinpatri/AquaVolt/releases/latest/download/AquaVolt_1.1.4_x64.dmg">
   <img src="https://img.shields.io/badge/macOS%20(Intel)-Download-lightgrey?style=for-the-badge&logo=apple" alt="Download for macOS Intel" />
 </a>
 </td>
