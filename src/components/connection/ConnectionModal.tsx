@@ -52,21 +52,22 @@ export default function ConnectionModal({ onClose }: { onClose: () => void }) {
   }
 
   return createPortal(
-    <>
-      <div onClick={onClose} style={{
-        position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.6)',
-        backdropFilter: 'blur(4px)', zIndex: 100,
-      }} />
-
+    <div
+      onClick={onClose}
+      style={{
+        position: 'fixed', inset: 0, zIndex: 100,
+        background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(4px)',
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
+      }}
+    >
       <div
         className="fade-in"
+        onClick={e => e.stopPropagation()}
         style={{
-          position:     'fixed', top: '50%', left: '50%',
-          transform:    'translate(-50%, -50%)',
           animation:    shaking ? 'shake 0.5s ease both' : 'fade-in 0.25s ease both',
           background:   'var(--bg-secondary)', border: '1px solid var(--bg-border)',
           borderRadius: 'var(--radius-xl)', padding: '28px', width: '360px',
-          zIndex:       101, boxShadow: '0 24px 80px rgba(0,0,0,0.6)',
+          boxShadow: '0 24px 80px rgba(0,0,0,0.6)',
         }}
       >
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '20px' }}>
@@ -167,7 +168,7 @@ export default function ConnectionModal({ onClose }: { onClose: () => void }) {
           </>
         )}
       </div>
-    </>,
+    </div>,
     document.body
   )
 }

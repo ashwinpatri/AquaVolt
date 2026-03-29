@@ -26,7 +26,10 @@ fn list_ports() -> Vec<String> {
     serialport::available_ports()
         .unwrap_or_default()
         .into_iter()
+        .filter(|p| matches!(p.port_type, serialport::SerialPortType::UsbPort(_)))
         .map(|p| p.port_name)
+        // On macOS prefer cu.* (outgoing) over tty.* (incoming) duplicates
+        .filter(|name| !name.contains("/dev/tty."))
         .collect()
 }
 
