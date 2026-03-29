@@ -53,17 +53,17 @@ export function usePiConnection() {
   }, [setConnected, setDeviceModel, setRunning])
 
   const start = useCallback(async () => {
-    await invoke('send_serial', { cmd: `START ${config.dutyCycle}` })
+    await invoke('send_serial', { cmd: JSON.stringify({ action: 'START', duty_cycle: config.dutyCycle }) })
     setRunning(true)
   }, [config.dutyCycle, setRunning])
 
   const stop = useCallback(async () => {
-    await invoke('send_serial', { cmd: 'STOP' })
+    await invoke('send_serial', { cmd: JSON.stringify({ action: 'STOP' }) })
     setRunning(false)
   }, [setRunning])
 
   const setPower = useCallback(async (duty: number) => {
-    await invoke('send_serial', { cmd: `SET_POWER ${duty}` })
+    await invoke('send_serial', { cmd: JSON.stringify({ action: 'SET_POWER', duty_cycle: duty }) })
   }, [])
 
   return { connected, running, connect, disconnect, start, stop, setPower }
