@@ -1,10 +1,17 @@
 import { useAppStore } from '../../store/appStore'
 import { useLanguage } from '../../App'
+import { usePiConnection } from '../../hooks/usePiConnection'
 
 export default function PowerSlider({ disabled }: { disabled: boolean }) {
-  const { config, updateConfig } = useAppStore()
+  const { config, updateConfig, running } = useAppStore()
+  const { setPower } = usePiConnection()
   const t = useLanguage()
   const pct = config.dutyCycle
+
+  const handleChange = (val: number) => {
+    updateConfig({ dutyCycle: val })
+    if (running) setPower(val)
+  }
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', opacity: disabled ? 0.4 : 1, pointerEvents: disabled ? 'none' : 'auto' }}>
@@ -23,7 +30,7 @@ export default function PowerSlider({ disabled }: { disabled: boolean }) {
         <input
           type="range" min={0} max={100} step={5}
           value={config.dutyCycle}
-          onChange={e => updateConfig({ dutyCycle: Number(e.target.value) })}
+          onChange={e => handleChange(Number(e.target.value))}
           style={{ position: 'absolute', width: '100%', opacity: 0, cursor: 'pointer', height: '20px' }}
         />
         <div style={{

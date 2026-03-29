@@ -6,7 +6,6 @@ import ConcentrationSlider from '../controls/ConcentrationSlider'
 import PowerSlider from '../controls/PowerSlider'
 import VolumeSelect from '../controls/VolumeSelect'
 import StartStopButton from '../controls/StartStopButton'
-import DeployButton from '../controls/DeployButton'
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
@@ -91,11 +90,6 @@ export default function Sidebar() {
           <PowerSlider   disabled={!connected} />
           <StartStopButton disabled={!connected} />
         </div>
-
-        <Divider />
-
-        <SectionLabel>Deploy</SectionLabel>
-        <DeployButton disabled={!connected} />
 
       </div>
 
