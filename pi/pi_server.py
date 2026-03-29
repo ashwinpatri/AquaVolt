@@ -32,6 +32,8 @@ state = {
 
 pwm = None
 ina = None
+_ema_v = None
+_ema_a = None
 
 def init_hardware():
     global pwm, ina
@@ -52,11 +54,14 @@ def set_duty(dc):
         pwm.ChangeDutyCycle(dc)
 
 def read_sensors():
+    global _ema_v, _ema_a
     if HARDWARE and ina:
         try:
             v = ina.bus_voltage + ina.shunt_voltage / 1000
             a = max(ina.current / 1000, 0)
-            return round(v, 3), round(a, 3)
+            _ema_v = v if _ema_v is None else 0.4 * v + 0.6 * _ema_v
+            _ema_a = a if _ema_a is None else 0.4 * a + 0.6 * _ema_a
+            return round(_ema_v, 3), round(_ema_a, 3)
         except:
             pass
     dc = state["duty_cycle"]
