@@ -79,7 +79,7 @@ export const useAppStore = create<AppStore>()(
       liveData: DEFAULT_LIVE, chartHistory: [],
       setLiveData: (data) => set((s) => ({
         liveData: data,
-        chartHistory: [...s.chartHistory.slice(-240), data],
+        chartHistory: s.running ? [...s.chartHistory.slice(-240), data] : s.chartHistory,
       })),
       clearHistory: () => set({ chartHistory: [] }),
 
