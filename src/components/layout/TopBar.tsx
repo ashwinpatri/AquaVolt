@@ -2,6 +2,7 @@ import { Settings, BookOpen } from 'lucide-react'
 import { useAppStore } from '../../store/appStore'
 import { useLanguage } from '../../App'
 import ConnectionButton from '../connection/ConnectionButton'
+import aquavoltLogo from '../../assets/images/AquaVolt.png'
 
 export default function TopBar({ onDocsOpen }: { onDocsOpen: () => void }) {
   const { activeTab, setActiveTab, setSettingsOpen, settingsOpen } = useAppStore()
@@ -32,7 +33,7 @@ export default function TopBar({ onDocsOpen }: { onDocsOpen: () => void }) {
         {/* Logo */}
         <div className="no-drag" style={{ overflow: 'hidden', height: '46px', width: '210px', flexShrink: 0, marginRight: '4px', marginLeft: '-74px' }}>
           <img
-            src="/src/assets/images/AquaVolt.png"
+            src={aquavoltLogo}
             alt="AquaVolt"
             style={{ height: '190px', width: 'auto', marginTop: '-65px', marginLeft: '-52px', display: 'block' }}
           />
